@@ -1,0 +1,193 @@
+@import url("https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap");
+.page {
+  position: relative;
+  width: 100%;
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  background: white;
+  font-family: "Montserrat", sans-serif;
+}
+
+.container {
+  position: relative;
+  width: 100%;
+  height: 65%;
+  background: rgb(176, 176, 176);
+  padding: 20px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.bg-image img {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  opacity: 0.2; /* Adjust this value to control the fade effect */
+  z-index: 1; /* Ensure the image is behind the content */
+}
+.navbar {
+  height: 13%;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  align-self: flex-start;
+}
+.navbar img {
+  height: 100%;
+}
+.navbar p {
+  font-size: 18px;
+  /* color: ; */
+}
+.main-content {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  z-index: 10;
+  margin-top: 30px;
+}
+.header1 {
+  font-size: 30px;
+  font-weight: 200;
+}
+.header2 {
+  font-size: 80px;
+  margin-bottom: 20px;
+  font-weight: bolder;
+}
+.description {
+  text-align: center;
+  font-size: 14px;
+  line-height: 25px;
+  width: 60%;
+  font-weight: 200;
+}
+.inputBox {
+  background: rgb(230, 230, 230);
+  width: 70%;
+  height: 60px;
+  border-radius: 40px;
+  border: 5px solid white;
+  display: flex;
+  padding: 10px;
+  align-items: center;
+  margin-top: 50px;
+  position: relative;
+}
+.inputBox input {
+  flex: 3;
+  border-radius: 40px;
+  border: none;
+  height: 100%;
+  background: rgb(230, 230, 230);
+  padding-left: 30px;
+  font-size: 15px;
+}
+.inputBox input:focus {
+  border: none;
+  outline: none;
+}
+.inputBox button {
+  padding: 0 25px;
+  border-radius: 30px;
+  border: none;
+  height: 40px;
+  color: white;
+  background: #ef626c;
+}
+.inputBox .icon {
+  position: absolute;
+  left: 10px;
+  font-size: 20px;
+  color: gray;
+}
+.contact-container {
+  width: 50%;
+  height: 100%;
+  /* background: ; */
+  text-align: center;
+  margin-top: 20px;
+  color: black;
+  display: flex;
+  flex-direction: column;
+}
+
+.contact-container h1 {
+  font-size: 34px;
+  margin-bottom: 10px;
+}
+
+.contact-container p {
+  margin: 5px 0;
+}
+
+.social-icons {
+  display: flex;
+  justify-content: center;
+  margin-top: 10px;
+  margin-bottom: 10px;
+}
+
+.social-icons a {
+  margin: 0 10px;
+  color: black;
+  font-size: 24px;
+  text-decoration: none;
+}
+
+.social-icons a:hover {
+  color: #ef626c;
+}
+.github-button {
+  appearance: none;
+  background-color: #000000;
+  border: 2px solid #1a1a1a;
+  border-radius: 15px;
+  box-sizing: border-box;
+  color: #ffffff;
+  cursor: pointer;
+  display: inline-block;
+  font-family: Roobert, -apple-system, BlinkMacSystemFont, "Segoe UI", Helvetica,
+    Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol";
+  font-size: 16px;
+  font-weight: 600;
+  line-height: normal;
+  margin: auto;
+  min-height: 40px;
+  min-width: 0;
+  outline: none;
+  padding: 8px 15px;
+  text-align: center;
+  text-decoration: none;
+  transition: all 300ms cubic-bezier(0.23, 1, 0.32, 1);
+  user-select: none;
+  -webkit-user-select: none;
+  touch-action: manipulation;
+  width: 50%;
+  will-change: transform;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+}
+
+.github-button:disabled {
+  pointer-events: none;
+}
+
+.github-button:hover {
+  box-shadow: rgba(0, 0, 0, 0.25) 0 8px 15px;
+  transform: translateY(-2px);
+  background-color: #ef626c;
+}
+
+.github-button:active {
+  box-shadow: none;
+  transform: translateY(0);
+}

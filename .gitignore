@@ -1,0 +1,179 @@
+# Node.js
+web/node_modules
+node_modules/
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+
+# React
+/build
+/.cache
+*.env
+.env.local
+.env.development.local
+.env.test.local
+.env.production.local
+
+# Logs
+logs/
+*.log
+*.log.*
+log/
+logs/
+*.log
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+
+# Flask
+instance/
+*.pyc
+*.pyo
+*.pyd
+*.db
+*.sqlite3
+
+# Python
+__pycache__/
+*.py[cod]
+*$py.class
+
+# Virtual environments
+.venv/
+venv/
+ENV/
+env/
+env.bak/
+env.local/
+
+# IDEs and editors
+.vscode/
+.idea/
+*.suo
+*.ntvs*
+*.njsproj
+*.sln
+
+# MacOS
+.DS_Store
+
+# Coverage
+coverage/
+*.cover
+*.coverage
+.cache
+nosetests.xml
+coverage.xml
+*.lcov
+
+# Pytest
+.pytest_cache/
+
+# Pylint
+reports/
+pylint.log
+
+# Environments
+.env
+.venv
+env/
+venv/
+ENV/
+env.bak/
+venv.bak/
+
+# PyCharm
+.idea/
+
+# Jupyter Notebook
+.ipynb_checkpoints
+
+# MyPy
+.mypy_cache/
+.dmypy.json
+dmypy.json
+
+# SQL
+*.sql
+
+# VS Code
+.vscode/
+
+# Windows
+Thumbs.db
+ehthumbs.db
+Desktop.ini
+$RECYCLE.BIN/
+
+# Linux
+*~
+
+# Flask-Specific
+instance/
+.webassets-cache
+
+# Node.js / React
+web/node_modules/
+web/.next/
+web/.cache/
+web/.env
+web/.vite/
+web/dist/
+web/build/
+web/coverage/
+web/*.log
+web/yarn-error.log
+web/package-lock.json
+web/yarn.lock
+
+# Python / Flask
+server/__pycache__/
+server/.env
+server/venv/
+server/.mypy_cache/
+server/.pytest_cache/
+server/.tox/
+server/.nox/
+server/.coverage
+server/.coverage.*
+server/*.cover
+server/.hypothesis/
+server/.nox/
+server/.tox/
+server/.venv/
+server/dist/
+server/build/
+server/eggs/
+server/*.egg-info/
+server/pyproject.toml
+server/poetry.lock
+
+# IDE / Editor directories
+.vscode/
+.idea/
+
+# Operating System Files
+.DS_Store
+Thumbs.db
+
+# Log files
+*.log
+
+# Compiled source #
+###################
+*.com
+*.class
+*.dll
+*.exe
+*.o
+*.so
+
+# Backup files #
+################
+*~ 
+*.bak
+*.swp
+*.swo
+
+# Environment files
+.env
