@@ -11,6 +11,10 @@ DOWNLOAD_FOLDER = '/tmp/downloads'  # Ensure this folder exists
 if not os.path.exists(DOWNLOAD_FOLDER):
     os.makedirs(DOWNLOAD_FOLDER)
 
+@app.route('/')
+def hello_world():
+    return '<h1>Hello World</h1>'
+
 @app.route("/download", methods=['POST'])
 def video_downloader():
     data = request.json
