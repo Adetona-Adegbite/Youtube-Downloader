@@ -1,0 +1,21 @@
+# Python / Flask
+__pycache__/
+.env
+venv/
+.mypy_cache/
+.pytest_cache/
+.tox/
+.nox/
+.coverage
+.coverage.*
+*.cover
+.hypothesis/
+.nox/
+.tox/
+.venv/
+dist/
+build/
+eggs/
+*.egg-info/
+pyproject.toml
+poetry.lock

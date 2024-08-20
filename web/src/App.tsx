@@ -24,13 +24,16 @@ const App: React.FC = () => {
   const handleDownloadClick = async () => {
     if (url) {
       try {
-        const response = await fetch("http://127.0.0.1:5000/download", {
-          method: "POST",
-          headers: {
-            "Content-Type": "application/json",
-          },
-          body: JSON.stringify({ url }), // Send url as an object
-        });
+        const response = await fetch(
+          "https://youtube-downloader-q75z.onrender.com/download",
+          {
+            method: "POST",
+            headers: {
+              "Content-Type": "application/json",
+            },
+            body: JSON.stringify({ url }), // Send url as an object
+          }
+        );
 
         const data = await response.json();
         if (response.ok) {

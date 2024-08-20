@@ -7,9 +7,11 @@ from flask_cors import CORS
 app = Flask(__name__)
 CORS(app)
 
-DOWNLOAD_FOLDER = '/tmp/downloads'  # Ensure this folder exists
+DOWNLOAD_FOLDER = './downloads'
 if not os.path.exists(DOWNLOAD_FOLDER):
     os.makedirs(DOWNLOAD_FOLDER)
+    print('folder created')
+
 
 @app.route('/')
 def hello_world():
@@ -19,6 +21,7 @@ def hello_world():
 def video_downloader():
     data = request.json
     url = data.get('url')
+    print(url)
     if not url:
         return jsonify({'error': 'No URL provided'}), 400
     try:
@@ -30,6 +33,7 @@ def video_downloader():
         filename = os.path.basename(file_path)
         return jsonify({'message': 'Download completed successfully.', 'file_path': filename,'thumbnail':yt.thumbnail_url,'title':yt.title})
     except Exception as e:
+        print(e)
         return jsonify({'error': str(e)}), 500
 
 
