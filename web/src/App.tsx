@@ -20,22 +20,24 @@ const App: React.FC = () => {
     thumbnail: string;
     file_path: string;
   } | null>(null);
+  const [loading, setLoading] = useState(false);
 
   const handleDownloadClick = async () => {
     if (url) {
+      setLoading(true);
+
       try {
-        const response = await fetch(
-          "https://youtube-downloader-q75z.onrender.com/download",
-          {
-            method: "POST",
-            headers: {
-              "Content-Type": "application/json",
-            },
-            body: JSON.stringify({ url }), // Send url as an object
-          }
-        );
+        const response = await fetch("http://127.0.0.1:5000/download", {
+          method: "POST",
+          headers: {
+            "Content-Type": "application/json",
+          },
+          body: JSON.stringify({ url }), // Send url as an object
+        });
 
         const data = await response.json();
+        console.log(data);
+
         if (response.ok) {
           setVideoData({
             title: data.title,
@@ -48,6 +50,8 @@ const App: React.FC = () => {
         }
       } catch (error) {
         console.error("An error occurred:", error);
+      } finally {
+        setLoading(false);
       }
     }
   };
@@ -107,24 +111,24 @@ const App: React.FC = () => {
         </p>
         <div className={classes["social-icons"]}>
           <a
-            href="https://www.instagram.com"
+            href="https://www.instagram.com/tona_tech?igsh=MTU0em1jMGl5MnJ0aw%3D%3D&utm_source=qr"
             target="_blank"
             rel="noopener noreferrer"
           >
             <FaInstagram />
           </a>
           <a
-            href="https://www.tiktok.com"
+            href="https://www.tiktok.com/@tona_tech"
             target="_blank"
             rel="noopener noreferrer"
           >
             <FaTiktok />
           </a>
-          <a href="mailto:your.email@example.com">
+          <a href="mailto:adetona67@gmail.com">
             <FaEnvelope />
           </a>
           <a
-            href="https://www.linkedin.com"
+            href="www.linkedin.com/in/adetona-adegbite-3a6a7916a"
             target="_blank"
             rel="noopener noreferrer"
           >
@@ -132,7 +136,7 @@ const App: React.FC = () => {
           </a>
         </div>
         <a
-          href="https://www.github.com"
+          href="https://github.com/Adetona-Adegbite/Youtube-Downloader.git"
           target="_blank"
           rel="noopener noreferrer"
           className={classes["github-button"]}
@@ -141,6 +145,11 @@ const App: React.FC = () => {
           <FaGithub size={32} color="white" />
         </a>
       </div>
+      {loading && (
+        <div className={classes.loading}>
+          <p>Loading...</p>
+        </div>
+      )}
       {showModal && (
         <Modal
           name={videoData?.title}

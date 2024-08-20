@@ -7,10 +7,14 @@ from flask_cors import CORS
 app = Flask(__name__)
 CORS(app)
 
-DOWNLOAD_FOLDER = './downloads'
+BASE_DIR = os.path.dirname(os.path.abspath(__file__))
+DOWNLOAD_FOLDER = os.path.join(BASE_DIR, 'downloads')
 if not os.path.exists(DOWNLOAD_FOLDER):
     os.makedirs(DOWNLOAD_FOLDER)
     print('folder created')
+
+def remove_space(filename):
+    return filename.replace(" ", "")
 
 
 @app.route('/')
@@ -29,8 +33,11 @@ def video_downloader():
         print(yt.title)
         ys = yt.streams.get_highest_resolution()
         file_path = ys.download(output_path=DOWNLOAD_FOLDER)
+        filename = remove_space(os.path.basename(file_path))
+        no_space_file_path = os.path.join(DOWNLOAD_FOLDER, filename)
         print("Download complete.")
-        filename = os.path.basename(file_path)
+        os.rename(file_path, no_space_file_path)
+
         return jsonify({'message': 'Download completed successfully.', 'file_path': filename,'thumbnail':yt.thumbnail_url,'title':yt.title})
     except Exception as e:
         print(e)
@@ -39,6 +46,7 @@ def video_downloader():
 
 @app.route('/files/<path:filename>', methods=['GET'])
 def get_file(filename):
+    print(filename)
     return send_from_directory(DOWNLOAD_FOLDER, filename, as_attachment=True)
 
 

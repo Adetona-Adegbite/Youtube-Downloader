@@ -15,10 +15,10 @@ const Modal: React.FC<ModalProps> = ({
   file_path,
 }) => {
   const downloadHandler = async () => {
+    console.log(file_path);
+
     try {
-      const response = await fetch(
-        `https://youtube-downloader-q75z.onrender.com/files/${file_path}`
-      );
+      const response = await fetch(`http://127.0.0.1:5000/files/${file_path}`);
       if (!response.ok) throw new Error("Download failed");
 
       const blob = await response.blob();
